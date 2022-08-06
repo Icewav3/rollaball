@@ -10,6 +10,15 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private float movementx;
     private float movementy;
+    
+    /*private Vector3 movement;
+
+    public Vector3 GetVector()
+    {
+        return movement;
+    }
+    */
+    
     void Start()
     {
         rb = GetComponent<Rigidbody>();
