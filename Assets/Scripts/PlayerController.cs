@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     private float movementx;
     private float movementy;
     private int count;
+    private int prefabcount;
+    
     /*private Vector3 movement;
 
     public Vector3 GetVector()
@@ -25,6 +27,8 @@ public class PlayerController : MonoBehaviour
     
     void Start()
     {
+        GameObject[] getCount = GameObject.FindGameObjectsWithTag("Pickup");
+        prefabcount = getCount.Length;
         rb = GetComponent<Rigidbody>();
         count = 0;
         WinTextGameObject.SetActive(false);
@@ -40,10 +44,8 @@ public class PlayerController : MonoBehaviour
 
     private void setCountText()
     {
-        GameObject[] getCount = GameObject.FindGameObjectsWithTag("Pickup");
         Score.text = "Current Score: " + count.ToString();
-        print(getCount.Length);
-        if (count >= getCount.Length) //how do we make this based on the number of the prefabs?
+        if (count >= prefabcount)
         {
             WinTextGameObject.SetActive(true);
         }
