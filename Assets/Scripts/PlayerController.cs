@@ -40,8 +40,10 @@ public class PlayerController : MonoBehaviour
 
     private void setCountText()
     {
+        GameObject[] getCount = GameObject.FindGameObjectsWithTag("Pickup");
         Score.text = "Current Score: " + count.ToString();
-        if (count >= 12) //how do we make this based on the number of the prefabs?
+        print(getCount.Length);
+        if (count >= getCount.Length) //how do we make this based on the number of the prefabs?
         {
             WinTextGameObject.SetActive(true);
         }
