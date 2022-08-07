@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
     private void setCountText()
     {
         Score.text = "Current Score: " + count.ToString();
-        if (count >= 12)
+        if (count >= 12) //how do we make this based on the number of the prefabs?
         {
             WinTextGameObject.SetActive(true);
         }
