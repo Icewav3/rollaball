@@ -9,13 +9,15 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 0;
     public TextMeshProUGUI Score;
-    public GameObject WinTextGameObject;
+    public TextMeshProUGUI CurrentStage;
+    public GameObject stage2;
     
     private Rigidbody rb;
     private float movementx;
     private float movementy;
     private int count;
     private int prefabcount;
+    private int stagenum;
     
     /*private Vector3 movement;
 
@@ -31,8 +33,9 @@ public class PlayerController : MonoBehaviour
         prefabcount = getCount.Length;
         rb = GetComponent<Rigidbody>();
         count = 0;
-        WinTextGameObject.SetActive(false);
+        stagenum = 1;
         setCountText();
+        stage2.SetActive(false);
     }
 
     void OnMove(InputValue movementValue)
@@ -47,7 +50,9 @@ public class PlayerController : MonoBehaviour
         Score.text = "Current Score: " + count.ToString();
         if (count >= prefabcount)
         {
-            WinTextGameObject.SetActive(true);
+            stagenum++;
+            CurrentStage.text = "Stage: " + stagenum.ToString();
+            stage2.SetActive(true);
         }
     }
 
